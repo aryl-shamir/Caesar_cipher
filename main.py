@@ -19,3 +19,13 @@ def encode(original_text, shift_amount):
     print(f'Here is your encoded result {cipher_text}')
 
 
+def decode(original_text, shift_amount):
+    cipher_text = ""
+    for letter in original_text:
+        if letter in alphabet:
+            position = alphabet.index(letter)
+            new_position = (position - shift_amount) % len(alphabet)
+            cipher_text += alphabet[new_position]
+        else:
+            cipher_text += letter
+    print(f'Here is your decoded result {cipher_text}')
